@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { MatchDetailCard } from '../components/MatchDetailCard';
 import { MatchSmallCard } from '../components/MatchSmallCard';
 
@@ -38,14 +38,14 @@ export const TeamPage = () => {
                         { title: 'Wins', value: team.totalWins, color: '#4da375' },
                     ]}
                 />
-                </div>
+            </div>
             <div className="match-detail-section" >
                 <h3>Latest Matches</h3>
                 <MatchDetailCard teamName={team.teamName} match={team.matches[0]} />
             </div>
             {team.matches.slice(1).map(match => <MatchSmallCard teamName={team.teamName} match={match} />)}
             <div className="more-link">
-                <a href="#">More ></a>
+                <Link to={`/teams/${teamName}/matches/${process.env.REACT_APP_DATA_END_YEAR}`}>More ></Link>
             </div>
         </div>
     );
