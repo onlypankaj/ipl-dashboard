@@ -7,7 +7,7 @@ import './HomePage.scss';
 
 export const HomePage = () => {
 
-    const [teams, setTeams] = useState();
+    const [teams, setTeams] = useState([]);
     useEffect(
         () => {
             const fetchAllTeams = async () => {
