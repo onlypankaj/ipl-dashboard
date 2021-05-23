@@ -24,9 +24,6 @@ export const MatchPage = () => {
 
 
     return (
-        <div>
-            <Link to="/">Home</Link>
-        
         <div className="MatchPage">
             <div className="year-selector">
                 <h3>Select Year</h3>
@@ -36,7 +33,6 @@ export const MatchPage = () => {
                 <h1 className="page-heading">{teamName} matches in {year}</h1>
                 {matches.map(match => <MatchDetailCard key={match.id} teamName={teamName} match={match} />)}
             </div>
-        </div>
         </div>
     );
 }
