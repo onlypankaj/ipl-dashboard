@@ -30,7 +30,7 @@ public class TeamController {
     @GetMapping("/team/{teamName}")
     public Team getTeam(@PathVariable String teamName){
         Team team = this.teamRespository.findByTeamName(teamName);
-        team.setMatches(this.matchRepository.findLateshMatchByTeam(teamName, 4));
+        team.setMatches(this.matchRepository.findLatestMatchByTeam(teamName, 4));
 
         System.out.println("Team UI called" + team);
         return team;
